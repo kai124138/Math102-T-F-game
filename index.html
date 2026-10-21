@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MATH 102 · True or False</title>
+  <meta name="description" content="A true/false drill on 237 linear algebra facts from the MATH 102 Midterm 1 proof toolbox: rank, similarity, block determinants, trace and more, with a counterexample for every trap.">
+  <meta property="og:title" content="MATH 102 · True or False">
+  <meta property="og:description" content="237 linear algebra statements. Spot the traps before the exam does.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kai124138.github.io/Math102-T-F-game/">
+  <meta property="og:image" content="https://kai124138.github.io/Math102-T-F-game/assets/preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233451d1'/%3E%3Cpath d='M17 34l8 8 15-18' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M44 38l8 8M52 38l-8 8' stroke='%23ffb4ab' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script>try{var t=JSON.parse(localStorage.getItem("math102-tf:theme"));if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="questions.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <button class="brand" type="button" id="brand" aria-label="Back to the menu">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M15 33l8 8 15-18" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 37l8 8M52 37l-8 8" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".7"/></svg>
+        </span>
+        <span class="brand-text"><strong>MATH 102</strong><span>True or False</span></span>
+      </button>
+      <nav class="top-actions" aria-label="Site">
+        <button class="top-btn" type="button" id="btn-notation" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Notation</span>
+        </button>
+        <button class="top-btn icon" type="button" id="btn-theme" aria-label="Switch to dark mode">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <a class="top-btn icon" href="https://github.com/kai124138/Math102-T-F-game" aria-label="Source code on GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+
+    <!-- ── Home ─────────────────────────────────────────────────────────── -->
+    <section id="home" class="screen">
+      <div class="hero">
+        <p class="eyebrow">Midterm 1 · Proof Toolbox</p>
+        <h1>True or false?</h1>
+        <p class="lede">
+          <span id="bank-size">237</span> statements about rank, similarity, block determinants and more.
+          The false ones are the traps worth catching before the exam does: implications run backwards,
+          missing hypotheses, rows swapped for columns. Every answer comes with the reason or a counterexample.
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Sections</h2>
+          <div class="text-actions">
+            <button type="button" class="link-btn" id="sec-all">Select all</button>
+            <span aria-hidden="true">·</span>
+            <button type="button" class="link-btn" id="sec-none">Clear</button>
+          </div>
+        </div>
+        <div class="sec-grid" id="sec-grid"></div>
+      </div>
+
+      <div class="panel options">
+        <div class="option-row">
+          <span class="option-label" id="lbl-length">Round length</span>
+          <div class="seg" id="seg-length" role="group" aria-labelledby="lbl-length">
+            <button type="button" data-value="10">10</button>
+            <button type="button" data-value="20">20</button>
+            <button type="button" data-value="40">40</button>
+            <button type="button" data-value="all">All</button>
+          </div>
+        </div>
+        <div class="option-row">
+          <span class="option-label" id="lbl-order">Order</span>
+          <div class="seg" id="seg-order" role="group" aria-labelledby="lbl-order">
+            <button type="button" data-value="shuffle">Shuffle</button>
+            <button type="button" data-value="weak">Weak spots first</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="start-row">
+        <button type="button" class="btn primary big" id="btn-start">Start</button>
+        <button type="button" class="btn ghost" id="btn-browse">Browse all statements</button>
+      </div>
+
+      <p class="progress-line" id="progress-line"></p>
+      <p class="kbd-hint">Keys: <kbd>T</kbd> true · <kbd>F</kbd> false · <kbd>Enter</kbd> next · <kbd>Esc</kbd> end round</p>
+    </section>
+
+    <!-- ── Play ─────────────────────────────────────────────────────────── -->
+    <section id="play" class="screen" hidden>
+      <div class="play-head">
+        <button type="button" class="btn ghost small" id="btn-end">End round</button>
+        <div class="counter" aria-live="off"><span id="q-index">1</span><span class="of">/</span><span id="q-total">20</span></div>
+        <div class="tally">
+          <span class="tally-item ok" title="Correct"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><b id="t-ok">0</b></span>
+          <span class="tally-item bad" title="Missed"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><b id="t-bad">0</b></span>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+
+      <article class="card" id="card" aria-labelledby="q-text">
+        <div class="card-top">
+          <span class="card-tag" id="q-tag"></span>
+          <span class="streak" id="streak" hidden></span>
+        </div>
+        <div class="statement" id="q-text"></div>
+        <div class="choices">
+          <button type="button" class="choice c-true" id="btn-true" aria-keyshortcuts="T">
+            <span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="choice-label">True</span><kbd class="hint-key">T</kbd>
+          </button>
+          <button type="button" class="choice c-false" id="btn-false" aria-keyshortcuts="F">
+            <span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            <span class="choice-label">False</span><kbd class="hint-key">F</kbd>
+          </button>
+        </div>
+        <div class="feedback" id="feedback" hidden>
+          <div class="verdict" id="verdict" role="status"></div>
+          <div class="why" id="why"></div>
+          <div class="refs" id="refs"></div>
+        </div>
+      </article>
+
+      <div class="next-row">
+        <button type="button" class="btn primary" id="btn-next" hidden><span id="next-label">Next</span> <kbd class="hint-key">Enter</kbd></button>
+      </div>
+    </section>
+
+    <!-- ── Results ──────────────────────────────────────────────────────── -->
+    <section id="results" class="screen" hidden>
+      <div class="result-hero">
+        <div class="ring" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-track" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="52"/>
+          </svg>
+          <span class="ring-pct" id="r-pct">0%</span>
+        </div>
+        <div class="result-text">
+          <p class="eyebrow">Round complete</p>
+          <h2 id="r-score">0 / 0</h2>
+          <p class="result-msg" id="r-msg"></p>
+          <p class="result-meta" id="r-meta"></p>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button type="button" class="btn primary" id="btn-replay">Replay missed</button>
+        <button type="button" class="btn" id="btn-again">New round</button>
+        <button type="button" class="btn ghost" id="btn-menu">Menu</button>
+      </div>
+
+      <div class="panel" id="r-sections-panel">
+        <h3>By section</h3>
+        <div class="breakdown" id="r-sections"></div>
+      </div>
+
+      <div id="r-missed-wrap">
+        <h3 class="list-title">What you missed</h3>
+        <div class="review-list" id="r-missed"></div>
+      </div>
+    </section>
+
+    <!-- ── Browse ───────────────────────────────────────────────────────── -->
+    <section id="browse" class="screen" hidden>
+      <div class="browse-head">
+        <button type="button" class="btn ghost small" id="btn-browse-back">← Menu</button>
+        <h2>All statements</h2>
+      </div>
+      <div class="browse-tools">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="search" id="search" placeholder="Search, e.g. similar, Schur, rank" autocomplete="off" aria-label="Search statements">
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="show-answers">
+          <span class="switch-track" aria-hidden="true"><span></span></span>
+          Show answers
+        </label>
+      </div>
+      <div class="chip-row" id="browse-chips" role="group" aria-label="Filter by section"></div>
+      <p class="browse-count" id="browse-count"></p>
+      <div class="browse-list" id="browse-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      Built for MATH 102 Midterm 1 review, from the course proof toolbox.
+      Spotted a mistake? <a href="https://github.com/kai124138/Math102-T-F-game/issues" target="_blank" rel="noopener">Open an issue</a>.
+    </div>
+  </footer>
+
+  <!-- ── Notation sheet ─────────────────────────────────────────────────── -->
+  <div class="sheet" id="notation" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="notation-title">
+      <div class="sheet-head">
+        <h2 id="notation-title">Notation</h2>
+        <button type="button" class="top-btn icon" id="notation-close" aria-label="Close" data-close>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <dl class="notation-list" id="notation-list"></dl>
+    </div>
+  </div>
+</body>
+</html>
