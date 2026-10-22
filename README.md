@@ -1,16 +1,19 @@
-# MATH 102 · True or False
+# MATH 102 · Midterm 1 review
 
-A true/false drill for the MATH 102 Midterm 1 proof toolbox. You get 237 linear algebra statements about rank, similarity, block determinants, trace and more. Answer true or false, and every answer comes with the reason it holds or a counterexample.
+Two study tools for MATH 102 Midterm 1, on one site:
 
-### ▶ [Play it here: kai124138.github.io/Math102-T-F-game](https://kai124138.github.io/Math102-T-F-game/)
+- **True or False.** 237 linear algebra statements about rank, similarity, block determinants, trace and more. Answer true or false, and every answer comes with the reason it holds or a counterexample.
+- **Homework, worked.** Every Midterm 1 homework problem with its final answer and a full-credit solution. Work it out, reveal the solution, and mark whether you had it.
 
-It runs in any browser, on a phone or a laptop. Nothing to install, no account needed.
+### ▶ [Play True or False](https://kai124138.github.io/Math102-T-F-game/) · [Open Homework, worked](https://kai124138.github.io/Math102-T-F-game/hw/)
 
-![A question about block determinants, answered, with its explanation](assets/preview.png)
+They run in any browser, on a phone or a laptop. Nothing to install, no account needed. A switch at the top of each page jumps to the other one.
 
-## What's in it
+![A True or False question about block determinants, answered, with its explanation](assets/preview.png)
 
-The 237 statements are split into the 11 sections of the proof toolbox:
+## True or False
+
+The 237 statements are split into 11 sections:
 
 | § | Section | Statements |
 |---|---|---|
@@ -35,17 +38,7 @@ The 237 statements are split into the 11 sections of the proof toolbox:
 
 Every false statement comes with a concrete counterexample, and the matrix counterexamples were checked numerically.
 
-## Features
-
-- **Pick your sections** and a round length (10, 20, 40 or all).
-- **Weak spots first** puts the statements you missed last time at the front of the round.
-- **Replay missed** re-runs only the ones you got wrong at the end of a round.
-- **Browse all statements**: search the full list, filter by section, and reveal answers one at a time or all at once.
-- **Notation sheet** explains every symbol the game uses.
-- Light and dark mode, and it works on phones.
-- Your progress is saved **only in your own browser** (localStorage). Nothing is sent anywhere.
-
-### Keyboard
+You can pick sections and a round length, put the statements you missed last time first (**Weak spots first**), replay only your misses at the end of a round, and browse or search every statement. A notation sheet explains the symbols.
 
 | Key | Action |
 |---|---|
@@ -55,45 +48,79 @@ Every false statement comes with a concrete counterexample, and the matrix count
 | `Esc` | End the round and see results |
 | `R` / `N` | On the results screen: replay missed / new round |
 
-## Reference tags
+Each answer shows chips such as **§7**, **H1008-04**, **L4S-33**, **P.3.26** or **Thm 9.6.3**. They point to the section, homework problem, course notes, or textbook result each fact comes from. Textbook numbers follow Garcia & Horn, *A Second Course in Linear Algebra*.
 
-Each answer shows chips such as **§7**, **H1008-04**, **L4S-33**, **P.3.26** or **Thm 9.6.3**. They point to the toolbox section, course homework, notes, or textbook result each fact comes from. Textbook numbers follow Garcia & Horn, *A Second Course in Linear Algebra*.
+## Homework, worked
 
-This is an unofficial study tool, not course material. If something looks wrong, check it against your notes and [open an issue](https://github.com/kai124138/Math102-T-F-game/issues). Every question has a **Report a problem** link that fills in which statement you mean.
+![A homework proof with its answer and full solution revealed](assets/preview-hw.png)
+
+| Set | Topics | Problems |
+|---|---|---|
+| HW 9/24 | Block multiplication, block inverses, trace | 19 |
+| HW 9/29 | Matrix products, polynomials, elementary matrices, similarity | 33 |
+| HW 10/1 | Block determinants, Schur complements | 8 |
+| HW 10/6 | Full-rank factorization, column space, rank | 29 |
+| HW 10/8 | Rank, similarity invariants, independence | 10 |
+| HW 10/13 | Real similarity of real matrices (Thm 9.6.3) | 8 |
+| HW 10/13 · Math 18 review | Diagonalization (Lay §5.3), not on Midterm 1, off by default | 36 |
+
+Problems the professor marked ✱ (not assigned) are left out. Multi-part problems show their shared setup on every part, and each step of the P.3.26 guided proof shows the statement it refers to. Two problems are tagged as possible midterm proofs (Lemma 3.2.17 and Theorem 2.3.7).
+
+Work each problem out first. Then reveal the answer and solution, and mark **Got it** or **Review again**. You can filter by type (computations, proofs, explain & verify, true/false) and order problems as assigned, shuffled, or weak spots first. Shuffling keeps the parts of a problem together and in order. At the end of a session you can replay just the problems you flagged, and **Browse all problems** has search and a "Show solutions" switch.
+
+| Key | Action |
+|---|---|
+| `Space` or `Enter` | Show the solution |
+| `G` or `←` | Got it |
+| `R` or `→` | Review again |
+| `Esc` | End the session and see results |
+
+The solutions are a study aid, not official course material. Try each problem before you look, and check anything surprising against your notes.
+
+## Your progress
+
+Both pages save your progress **only in your own browser** (localStorage, not cookies). Nothing is sent anywhere. Progress is per device and per browser, and **Reset progress** on each home screen clears it.
+
+## Mistakes
+
+If something looks wrong, [open an issue](https://github.com/kai124138/Math102-T-F-game/issues). Every question has a **Report a problem** link that fills in which one you mean.
 
 ## Run it locally
 
-It's a static site (HTML, CSS and plain JavaScript, no build step):
+It's a static site (HTML, CSS and plain JavaScript):
 
 ```sh
 git clone https://github.com/kai124138/Math102-T-F-game.git
 cd Math102-T-F-game
-python3 -m http.server 8000     # then open http://localhost:8000
+python3 -m http.server 8000     # then open http://localhost:8000 (homework page: /hw/)
 ```
 
-Opening `index.html` directly also works. You need an internet connection either way, because KaTeX (the math renderer) and the fonts load from a CDN.
+You need an internet connection, because KaTeX (math), marked (Markdown, on the homework page) and the fonts load from a CDN.
 
-## Adding or fixing a statement
+## Editing content
 
-All statements live in [`questions.js`](questions.js). Each one is a single line:
+**True or False statements** live in [`questions.js`](questions.js), one line each:
 
 ```js
 //  section  answer  statement                                  explanation                                   tag (optional)
     [7,      F,      L`$\tr A=\tr B \implies A\sim B$.`,        L`$\sm{1&1\\0&1}$ and $I$ share a trace…`,    "H1008-04"],
 ```
 
-- Math goes inside `$…$` and is rendered by [KaTeX](https://katex.org). `L` is `String.raw`, so backslashes need no escaping.
-- `**bold**` works in the plain-text parts.
-- Shortcuts defined at the top of the file: `\rank`, `\nul`, `\col`, `\row`, `\tr`, `\diag`, `\RREF`, `\spn`, `\F`, `\R`, `\C`, `\T` (transpose, as in `A^\T`), `\conj{A}`, `\sm{a&b\\c&d}` (small inline matrix) and `\mat{…}` (full-size matrix).
+Math goes inside `$…$` and is rendered by [KaTeX](https://katex.org). `L` is `String.raw`, so backslashes need no escaping. `**bold**` works in the plain-text parts. The top of the file defines these shortcuts: `\rank`, `\nul`, `\col`, `\row`, `\tr`, `\diag`, `\RREF`, `\spn`, `\F`, `\R`, `\C`, `\T` (transpose, as in `A^\T`), `\conj{A}`, `\sm{a&b\\c&d}` (small inline matrix) and `\mat{…}` (full-size matrix).
 
-Saved progress is keyed to each statement's text, so editing a statement resets the saved progress for that one statement.
+**Homework problems** in [`hw/problems.js`](hw/problems.js) are generated, so don't edit that file by hand. It's built from the course question bank and answer key (Markdown files kept outside this repo) by [`tools/build_problems.py`](tools/build_problems.py), which stops with an error if any problem is missing its solution.
+
+Saved progress is keyed to each statement's text (True or False) or problem ID (Homework). Editing a statement resets the saved progress for that one statement.
 
 ## Files
 
 ```
-index.html     page structure
-style.css      design (light and dark themes)
-app.js         game logic, rendering, saved progress
-questions.js   the 237 statements, section names and KaTeX shortcuts
-assets/        preview image
+index.html, app.js, questions.js   True or False page, game logic, and the 237 statements
+style.css                          shared design (light and dark themes)
+hw/index.html, hw/app.js           Homework page and its session logic
+hw/render.js                       Markdown + LaTeX rendering
+hw/hw.css                          homework-specific styles
+hw/problems.js                     generated homework data (143 problems)
+tools/build_problems.py            builds hw/problems.js
+assets/                            preview images
 ```

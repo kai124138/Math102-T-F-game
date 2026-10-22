@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MATH 102 · True or False</title>
-  <meta name="description" content="A true/false drill on 237 linear algebra facts from the MATH 102 Midterm 1 proof toolbox: rank, similarity, block determinants, trace and more, with a counterexample for every trap.">
+  <meta name="description" content="MATH 102 Midterm 1 review: a true/false drill on 237 linear algebra facts (rank, similarity, block determinants, trace and more) with a counterexample for every trap, plus every homework problem worked out.">
   <meta property="og:title" content="MATH 102 · True or False">
   <meta property="og:description" content="237 linear algebra statements. Spot the traps before the exam does.">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta name="theme-color" content="#f5f4ef" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233451d1'/%3E%3Cpath d='M17 34l8 8 15-18' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M44 38l8 8M52 38l-8 8' stroke='%23ffb4ab' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
-  <script>try{var t=JSON.parse(localStorage.getItem("math102-tf:theme"));if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <script>try{var t=JSON.parse(localStorage.getItem("math102:theme"));if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
@@ -33,8 +33,12 @@
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 64 64"><path d="M15 33l8 8 15-18" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 37l8 8M52 37l-8 8" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".7"/></svg>
         </span>
-        <span class="brand-text"><strong>MATH 102</strong><span>True or False</span></span>
+        <span class="brand-text"><strong>MATH 102</strong><span>Midterm 1 review</span></span>
       </button>
+      <nav class="mode-nav" aria-label="Pages">
+        <a href="./" aria-current="page">True/False</a>
+        <a href="hw/">Homework</a>
+      </nav>
       <nav class="top-actions" aria-label="Site">
         <button class="top-btn" type="button" id="btn-notation" aria-haspopup="dialog">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -56,7 +60,7 @@
     <!-- ── Home ─────────────────────────────────────────────────────────── -->
     <section id="home" class="screen">
       <div class="hero">
-        <p class="eyebrow">Midterm 1 · Proof Toolbox</p>
+        <p class="eyebrow">Midterm 1 · True or False</p>
         <h1>True or false?</h1>
         <p class="lede">
           <span id="bank-size">237</span> statements about rank, similarity, block determinants and more.
@@ -103,6 +107,14 @@
 
       <p class="progress-line" id="progress-line"></p>
       <p class="kbd-hint">Keys: <kbd>T</kbd> true · <kbd>F</kbd> false · <kbd>Enter</kbd> next · <kbd>Esc</kbd> end round</p>
+
+      <a class="cross-link" href="hw/">
+        <span class="cross-link-text">
+          <strong>Homework, worked</strong>
+          <span>Every Midterm 1 homework problem with its answer and a full-credit solution.</span>
+        </span>
+        <span class="cross-link-arrow" aria-hidden="true">→</span>
+      </a>
     </section>
 
     <!-- ── Play ─────────────────────────────────────────────────────────── -->
@@ -206,7 +218,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      Built for MATH 102 Midterm 1 review, from the course proof toolbox.
+      Built for MATH 102 Midterm 1 review.
       Spotted a mistake? <a href="https://github.com/kai124138/Math102-T-F-game/issues" target="_blank" rel="noopener">Open an issue</a>.
     </div>
   </footer>

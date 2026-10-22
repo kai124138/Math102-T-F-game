@@ -127,7 +127,8 @@
   $("btn-theme").addEventListener("click", () => {
     const next = isDark() ? "light" : "dark";
     root.dataset.theme = next;
-    store.set("theme", next);
+    // Shared with the Homework page, so the theme carries across both.
+    try { localStorage.setItem("math102:theme", JSON.stringify(next)); } catch { /* storage unavailable */ }
     syncThemeButton();
   });
   darkQuery.addEventListener?.("change", syncThemeButton);

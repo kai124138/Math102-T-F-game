@@ -1,5 +1,5 @@
 /*
- * MATH 102 · Proof Toolbox — the True/False bank.
+ * MATH 102 · Midterm 1 — the True/False bank.
  *
  * Each entry is  [section, answer, statement, explanation, reference]
  *   section      1–11, matching TF_SECTIONS below

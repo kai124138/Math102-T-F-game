@@ -176,6 +176,34 @@ main.wrap { flex: 1; padding-top: 28px; padding-bottom: 56px; }
   :root:not([data-theme="light"]) .i-moon { display: none !important; }
 }
 
+/* Page switch (True/False | Homework) */
+.mode-nav {
+  display: inline-flex; padding: 3px; gap: 2px;
+  border: 1px solid var(--line); border-radius: 11px; background: var(--surface-3);
+}
+.mode-nav a {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 13px;
+  border-radius: 8px; color: var(--muted); font-size: .88rem; font-weight: 500; text-decoration: none; white-space: nowrap;
+  transition: background .15s, color .15s, box-shadow .15s;
+}
+.mode-nav a:hover { color: var(--ink); }
+.mode-nav a[aria-current="page"] { background: var(--surface); color: var(--ink); font-weight: 600; box-shadow: var(--shadow-sm); }
+
+/* Link card from one page to the other */
+.cross-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin-top: 28px; padding: 16px 18px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+  color: var(--ink); text-decoration: none; box-shadow: var(--shadow-sm);
+  transition: border-color .15s, transform .15s;
+}
+.cross-link:hover { border-color: var(--accent); }
+.cross-link-text { display: flex; flex-direction: column; gap: 2px; }
+.cross-link-text strong { font-size: 1rem; }
+.cross-link-text span { color: var(--muted); font-size: .9rem; }
+.cross-link-arrow { color: var(--accent); font-size: 1.3rem; transition: transform .15s; }
+.cross-link:hover .cross-link-arrow { transform: translateX(3px); }
+
 /* ── Shared building blocks ──────────────────────────────────────────────── */
 .eyebrow {
   font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
@@ -507,6 +535,8 @@ main.wrap { flex: 1; padding-top: 28px; padding-bottom: 56px; }
 /* ── Small screens & touch ───────────────────────────────────────────────── */
 @media (max-width: 560px) {
   main.wrap { padding-top: 18px; }
+  .brand-text { display: none; }
+  .mode-nav a { padding: 0 11px; }
   .top-btn span { display: none; }
   #btn-notation { width: 38px; padding: 0; justify-content: center; }
   .panel { padding: 16px 14px; }
@@ -528,6 +558,9 @@ main.wrap { flex: 1; padding-top: 28px; padding-bottom: 56px; }
   .b-body { padding-left: 14px; }
   .play-head { grid-template-columns: auto 1fr auto; }
   .counter { justify-self: center; }
+}
+@media (max-width: 400px) {
+  .top-actions a.top-btn { display: none; }
 }
 @media (max-width: 340px) {
   .sec-grid { grid-template-columns: 1fr; }
